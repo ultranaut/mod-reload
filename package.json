@@ -1,0 +1,28 @@
+{
+  "name": "mod-reload",
+  "version": "0.1.0",
+  "description": "For reloading `require`'d modules.",
+  "main": "mod-reload.js",
+  "keywords": [
+    "repl",
+    "reload",
+    "util"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ultranaut/mod-reload.git"
+  },
+  "author": "John Shearer <john@ultranaut.com> (http://ultranaut.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ultranaut/mod-reload/issues"
+  },
+  "homepage": "https://github.com/ultranaut/mod-reload#readme",
+  "files": [
+    "mod-reload.js",
+    "LICENSE"
+  ]
+}
