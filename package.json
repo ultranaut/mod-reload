@@ -24,5 +24,10 @@
   "files": [
     "mod-reload.js",
     "LICENSE"
-  ]
+  ],
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-eslint": "^0.14.0",
+    "gulp-plumber": "^1.0.1"
+  }
 }
