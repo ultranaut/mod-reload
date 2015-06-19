@@ -1,6 +1,7 @@
 'use strict';
 
 var gulp = require('gulp');
+var babel  = require('babel/register');
 var plumber = require('gulp-plumber');
 var lint = require('gulp-eslint');
 var mocha = require('gulp-mocha');

@@ -9,7 +9,7 @@
     "util"
   ],
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --compilers js:babel/register"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,10 @@
     "LICENSE"
   ],
   "devDependencies": {
+    "babel": "^5.5.8",
+    "babel-eslint": "^3.1.17",
     "chai": "^3.0.0",
+    "eslint": "^0.23.0",
     "gulp": "^3.9.0",
     "gulp-eslint": "^0.14.0",
     "gulp-mocha": "^2.1.1",
