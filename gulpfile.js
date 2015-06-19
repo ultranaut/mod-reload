@@ -3,6 +3,7 @@
 var gulp = require('gulp');
 var plumber = require('gulp-plumber');
 var lint = require('gulp-eslint');
+var mocha = require('gulp-mocha');
 
 var srcFile = './mod-reload.js';
 
@@ -14,9 +15,16 @@ gulp.task('lint', function () {
     .pipe(lint.failOnError());
 });
 
+gulp.task('test', function () {
+  return gulp.src('test/*.spec.js')
+    .pipe(plumber())
+    .pipe(mocha());
+});
+
+
 gulp.task('watch', function () {
-  gulp.watch(srcFile, ['lint']);
+  gulp.watch(srcFile, ['lint', 'test']);
 });
 
 // default task
-gulp.task('default', ['lint', 'watch']);
+gulp.task('default', ['lint', 'test', 'watch']);
