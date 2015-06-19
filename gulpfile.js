@@ -1,12 +1,16 @@
 'use strict';
 
 var gulp = require('gulp');
-var babel  = require('babel/register');
-var plumber = require('gulp-plumber');
+var babel = require('gulp-babel');
+var del = require('del');
 var lint = require('gulp-eslint');
 var mocha = require('gulp-mocha');
+var plumber = require('gulp-plumber');
 
-var srcFile = './mod-reload.js';
+// necessary for gulp-mocha to work
+require('babel/register');
+
+var srcFile = './src/mod-reload.js';
 
 gulp.task('lint', function () {
   return gulp.src(srcFile)
@@ -22,6 +26,16 @@ gulp.task('test', function () {
     .pipe(mocha());
 });
 
+gulp.task('clean', function () {
+  del(['./mod-reload.js']);
+});
+
+gulp.task('build', ['clean', 'lint', 'test'], function () {
+  return gulp.src(srcFile)
+    .pipe(plumber())
+    .pipe(babel())
+    .pipe(gulp.dest('./'));
+});
 
 gulp.task('watch', function () {
   gulp.watch(srcFile, ['lint', 'test']);
